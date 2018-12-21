@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="./assets/mui/css/mui.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/mui/css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="./css/base.css" />
+    <link rel="stylesheet" type="text/css" href="./css/search.css" />
+    <script src="./assets/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./js/public.js"></script>
+    <script src="./assets/mui/js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/template-web.js"></script>
+</head>
+
+<body>
+
+    <!-- 头部 -->
+    <header class="mui-bar mui-bar-nav my-heade">
+        <a class="mui-action-back mui-icon mui-icon mui-icon mui-icon-back mui-pull-left" href="category.html"></a>
+        <h1 class="mui-title">乐淘搜索</h1>
+    </header>
+    <!-- footer底部 -->
+    <nav class="mui-bar mui-bar-tab my-footer">
+        <a class="mui-tab-item " href="index.html">
+            <span class="mui-icon mui-icon-home"></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item mui-active" href="#">
+            <span class="mui-icon mui-icon mui-icon-bars"><span class="mui-badge"></span></span>
+            <span class="mui-tab-label">分类</span>
+        </a>
+        <a class="mui-tab-item" href="#tabbar-with-contact">
+            <span class="mui-icon iconfont icon-gouwuche"></span>
+            <span class="mui-tab-label">购物车</span>
+        </a>
+        <a class="mui-tab-item" href="user.html">
+            <span class="mui-icon mui-icon mui-icon-contact"></span>
+            <span class="mui-tab-label">会员中心</span>
+        </a>
+    </nav>
+    <div class="mui-content">
+        <div class="container">
+            <!-- 搜索框 -->
+            <div class="search">
+                <input type="text" placeholder="搜索您喜欢的商品">
+                <input type="button" value="搜索" id="search-btn">
+            </div>
+            <!-- /搜索框 -->
+
+            <!-- 搜索历史 -->
+            <div class="history-top mui-clearfix">
+                <span class="title mui-pull-left">搜索历史</span>
+                <span class="clear mui-pull-right mui-icon mui-icon-trash" id="clearBtn">清空历史</span>
+            </div>
+            <ul class="mui-table-view" id="history-box">
+
+            </ul>
+            <!-- /搜索历史 -->
+        </div>
+    </div>
+    <!-- search模板 -->
+    <script type="text/template" id="search"> 
+        <% for(var i = 0; i < result.length;i++) {%>
+            <li class="mui-table-view-cell"> <%=result[i] %></li>
+        <% } %>
+    </script>
+    <!-- 跳转 -->
+    <!-- <script>
+        mui('body').on('tap', 'a', function () {
+         mui.openWindow({ url: this.href })
+     });
+</script> -->
+<script src="./js/public.js"></script>
+</body>
+
+</html>

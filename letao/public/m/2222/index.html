@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.1.0.min.js"></script>
+    <script src="./template-web.js"></script>
+    <link rel="stylesheet" href="../assets/mui/css/mui.css">
+ 
+</head>
+
+<body>
+    <!-- <div id="box"></div>
+    <script>
+        $.ajax({
+            url:"index.json",
+            type:"get",
+            success:function(res){
+                console.log(res);
+                var html=template("template",{data:res.res})
+                console.log(html);
+                $("#box").html(html);
+                
+                
+            }
+
+        })
+    </script>
+    <script type="text/template" id="template">
+         <% for(var i =0; i < data.length;i++){ %>
+            <li><%=data[i].name %></li>
+        <% } %>
+    </script> -->
+    <ul class="mui-table-view" id="box">
+
+        
+
+     
+
+    </ul>
+    <script>
+        $(function(){
+            var arr=[
+                {
+                    name:"王静",
+                    score:4.5,
+                    phpto:"../images/active1.png",
+                    hospital:"江苏省中医院",
+                    desc:"不孕不育",
+                    position:"副医师"
+                }
+            ]
+            var html = template("template", {data: arr});
+        $("#box").html(html);
+        })
+    </script>
+
+    <script type="text/template" id="template">
+        <% for(var i = 0; i < data.length;i++){ %>
+            <li class="mui-table-view-cell mui-media" >
+            <a href="javascript:;">
+                <img class="mui-media-object mui-pull-left" src="<%=data[i].phpto%>">
+                <div class="mui-media-body">
+                        <%=data[i].hospital%> 
+                    <p class='mui-ellipsis'><%=data[i].desc%></p>
+                </div>
+            </a>
+        </li>
+        <% } %>
+    </script>
+    
+</body>
+
+</html>
